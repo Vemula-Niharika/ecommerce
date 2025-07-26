@@ -1,9 +1,9 @@
 import login from "./login.js";
 import Register from "./Register.js";
 
-const root=document.getElementById('root')
+const root=document.getElementById('root');
 console.log(root);
-const allanchors=document.querySelectorAll('a')
+const allAnchors=document.querySelectorAll('a')
 
 const router={
     "/login":login,
@@ -25,7 +25,20 @@ function handelClick(e)
 
     root.innerHTML=router[path]()
 }
-allanchors.forEach((anchor)=>
+allAnchors.forEach((anchor)=>
 {
     anchor.addEventListener("click",handelClick)
 })
+
+// window.addEventListener('popstate',(e)=>{
+//     // console.log(location);
+//     let path=location.pathname
+//     if(path=="/index.html")
+//     {
+//         root.innerHTML=""
+//     }
+//     else{
+//         root.innerHTML=router[path]()
+//         }
+    
+// })
